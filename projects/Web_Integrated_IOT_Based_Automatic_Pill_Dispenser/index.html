@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediciner IoT | Nigel Nayar</title>
+    <!-- Links to your main stylesheet in the root folder -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <span class="logo"><a href="../../index.html">Nigel Nayar</a></span>
+            <ul>
+                <li><a href="../../about/index.html">About</a></li>
+                <li><a href="../../projects/index.html">Projects</a></li>
+                <li><a href="mailto:nigelnayar0@gmail.com">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="container">
+        <h1>Web Integrated IOT Based Automatic Pill Dispenser</h1>
+        <p class="justified-text">Patient’s medicine negligence is a serious health problem that could reduce the effectiveness of treatment, especially for elderly patients. This project aims to design a device,
+            called “Mediciner”, an automatic IOT-based medicine dispenser that is simple, open source, and
+            affordable. This system is built using ESP32 microcontrollers that is integrated to Google’s
+            Firebase’s Realtime Database to synch the schedule in real time. My system is equipped with LCD
+            20x4 I2C for hardware status visualization, time, and the next schedule, not forgetting web
+            dashboard for remote monitoring and control.</p>
+
+            <p>This project was developed as part of my Embedded Systems
+    coursework to fulfill a college assignment requirements.</p>
+
+        <h3>Description</h3>
+        <p class="justified-text">“Mediciner” is an IOT based medicine (or pill) reminder and dispensing device that is
+            specifically designed to tackle patients’ medication non-adherence problems. In modern
+            healthcare context, medication negligance–wether because of forgetfulness or
+            unintentional double dosage–is a very serious problem, especially for elderly or chronically
+            ill patients.</p>
+
+            <p class="justified-text">This device is quite similar to its state-of-the-art counterparts, like the simple electronic
+            medicine box or other expensive commercial smart pill dispensers. Compared to them,
+            “Mediciner” offers different approaches. Commercial pill dispensers commonly have a
+            closed, propietary ecosystems. Most of them are quite expensive and fully dependent on
+            each company’s servers. In contrast, “Mediciner” is designed as a low-cost devie with open
+            source architecture that combines both offline reliability and the flexibility of online cloud
+            control.</p>
+
+        <h3>Architecture</h3>
+        <p>The system is built upon a modular architecture:</p>
+        <ul>
+            <li><strong> Controller:</strong> <a href="https://espressif.com/en/products/socs/esp32">ESP32</a>  (handles Wi-Fi connectivity and logic).</li>
+            <li><strong>Cloud Backend:</strong> <a href="https://firebase.google.com/">Google Firebase</a> (Realtime Database for scheduling and logging).</li>
+            <li><strong>Actuation:</strong> Servo motors triggered by the microcontroller.</li>
+        </ul>
+        <p class="justified-text">The core or “brain” of this device is ESP32 microcontroller that handles control
+logics and Wi-Fi communication. An SG90 micro servo is used as the actuator that moves
+the rotating disc mechanism to separate and dispense 1 or more pills at a time. For physical
+interface, we use a push button for manual override, in case of an emergency or for testing
+purposes.</p>
+
+<p class="justified-text">For the servo setup we need to modify the width of the pulse. Since the SC90 Micro
+Servo operates in 50hz frequency, meaning the period of one cycle is 20ms. We use 16 bit
+for smooth servo movement. Thus, it has a resolution of 2<sup>16</sup> = 65536. Fot the lower
+constraint, we use a pulse width of 0.5 to prevent the servo to turn off or loose power. And
+because of that, since we need 2ms to reach 180 degrees, we will use 2.5ms as the upper
+constraint. Thus for the duty cycle we can calculate using (0.5ms/20ms * 65535 = 1638)
+and (2.5ms/20ms * 65535 = 8192).</p>
+
+<p class="justified-text">I also implement LCD 16x2 with I2C communication as an additional feature to
+improve user interface experience. This screen shows vital information in real-time without
+having to connect to a computer. These information include: Wi-Fi Connection status,
+current time, servo angel, and “dispensing” message.</p>
+
+        <p class="justified-text">My device uses Firebase Realtime Database for backend. This enables user to set their
+own schedule for each dosage (alarm0 to alarm3) through web interface. The key
+feature that separates our device from the conventional method is the use of Non-
+Volatile Storage. This feature saves schedule and the current angle of the servo to
+ESP32’s Memmory. In addition, to simplify user’s interaction, I design a responsive web app using
+Firebase SDK. This web app acts as a control panel that allows the user to monitor in
+real time, manage schedules, and synch instantly.</p>
+
+<p>In fact, you can even access my device's dashboard right now by clicking <a href="https://nigelnayar.github.io/Mediciner/">here</a>. You can control the one and only device that is available through the dashboard from anywhere. Unfortunately I already scrapped the device for other purposes. </p>
+
+        <h3>How It Works</h3>
+        <p>The user inputs their medication schedule via a web interface connected to Firebase. The ESP32 constantly listens for changes in the database. When a scheduled time is reached, the ESP32 activates the servo motor to dispense the pill and updates the status to 'Dispensed' in the database.</p>
+
+        <h3>Demonstration</h3>
+        <div class="video-container">
+            <!-- Replace YOUR_VIDEO_ID with the actual ID from your YouTube URL -->
+            <iframe width="315" height="560"
+src="https://www.youtube.com/embed/9j9_rfQzKXA"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen></iframe>
+
+        </div>
+    
+    <h3>Downloads</h3>
+    <p>The files for the entire device is available for download <a href="../../downloads/iotdispenser/iotpilldispenser.zip" download>here</a>.</p>
+    <p>To download the components individually:</p>
+    <ul>
+            <li><strong> <a href="../../downloads/iotdispenser/body.stl">Body</a></strong></li>
+            <li><strong> <a href="../../downloads/iotdispenser/rotator.stl">Rotator</a></strong></li>
+            <li><strong> <a href="../../downloads/iotdispenser/pilldispenserfirmware.ino">Firmware</a></strong></li>
+        </ul>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 Nigel Nayar.</p>
+    </footer>
+</body>
+</html>
