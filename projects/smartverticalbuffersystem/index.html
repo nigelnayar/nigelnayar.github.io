@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevator Outomation | Nigel Nayar</title>
+    <!-- Links to your main stylesheet in the root folder -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <span class="logo"><a href="../../index.html">Nigel Nayar</a></span>
+            <ul>
+                <li><a href="../../about/index.html">About</a></li>
+                <li><a href="../../projects/index.html">Projects</a></li>
+                <li><a href="mailto:nigelnayar0@gmail.com">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="container">
+        <h1>Smart Vertical Buffer System</h1>
+        
+
+        <h3>Description</h3>
+        <p>This is a simulation project for my Control Engineering Practiccum course. I use <a href="https://factoryio.com/">Factory.IO</a> as a virtual environment to simulate the system. To program the automation system, i use ladder programming with EcoStruxure Machine Expert Basic by Schneider Electric.</p>
+        <img src="../../images/topdownview.png" alt="Description of the image">
+        <p class="justified-text">This project is a simulation of smart elevator automation designed to efficiently distribute pallets from the input line to available storage levels. 
+            This mechanism operates by scanning the occupancy status at each level using retro-reflective sensors, then instructing the elevator to move pallets only to the detected empty shelf slots, thus preventing the accumulation of goods. 
+            
+            This system uses a roller conveyor as a pallet base and integrates programming logic in the form of array data processing to track warehouse occupancy, and is equipped with an interactive operator panel for real-time system status monitoring.</p>
+
+        <h3>Objects</h3>
+        <p>The system uses these objects available on the simulator Factory.IO:</p>
+        <ul>
+            <li><strong> Conveyor Belt:</strong> To move the goods </li>
+            <li><strong>Retro-Reflective Sensors:</strong> A photoelectric device that pairs an emitter and a receiver in a single housing. It emits a light beam that hits a reflector and bounces back to the receiver. When an object interrupts or breaks the light beam, the sensor triggers a switching signal.</li>
+            <li><strong>Elevators:</strong> Heavy-duty chain-driven elevator, used for transportation of all sorts of cargo between floors. The elevator is equipped with two retroreflective sensors, placed at each end of the platform. The elevator can be controlled by digital or analog values, according to the selected configuration. </li>
+            <li><strong>Boxes:</strong> These are used to simulate the goods.</li>
+        </ul>
+
+        <h3>How It Works</h3>
+        <h4 class="howitworks">1. System Initiation & Entry Feed Control</h4>
+
+    <div class="rung-container">
+        <div class="rung-header">Rung 0: System Master Control</div>
+        <div class="rung-body">
+            <div class="rung-details">Manages the primary operational state of the entire system utilizing latching logic. Pressing the physical <strong>Start</strong> button seals/latches the execution loop, while the <strong>Stop</strong> button breaks the circuit to reset the system state safely.</div>
+            <div class="logic-tags">
+                <span class="tag">Start_Button</span>
+                <span class="tag">Stop_Button</span>
+                <span class="tag tag-output">System_Start (Latch)</span>
+            </div>
+        </div>
+        </div>
+
+        <div class="rung-container">
+        <div class="rung-header">Rung 1: Entry Feed & Emitter Interlocking</div>
+        <div class="rung-body">
+            <div class="rung-details">Controls the external entry conveyor line and the package emitter. The logic permits loading only when the core system is active, the elevator is physically resting at Floor 1, and the storage racking grid is verified to have open capacity.</div>
+            <div class="logic-tags">
+                <span class="tag">System_Start</span>
+                <span class="tag">Elevator_At_Floor_1</span>
+                <span class="tag">Rack_Full_Flag = False</span>
+                <span class="tag tag-output">Entry_Conveyor_On</span>
+                <span class="tag tag-output">Emitter_Active</span>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="howitworks">2. Vacancy Scanning & Dynamic Routing</h4>
+    
+    <div class="rung-container">
+        <div class="rung-header">Rungs 2, 3 & 4: Conditional Slot Scanning & Target Assignment</div>
+        <div class="rung-body">
+            <div class="rung-details">Executes sequential vacancy inspections across warehouse levels using conditional Jump instructions. Retro-reflective sensors track storage availability, if an empty space is registered on an intermediate floor, the PLC instantly bypasses remaining checks and jumps directly to label <strong>L0</strong> to assign that level as the destination.</div>
+            <div class="logic-tags">
+                <span class="tag">Retro_Reflective_Sensors</span>
+                <span class="tag tag-jump">JMP L0</span>
+                <span class="tag tag-output">Target_Floor_Variable</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="rung-container">
+        <div class="rung-header">Rung 5: Warehouse Capacity Exception (Full Condition)</div>
+        <div class="rung-body">
+            <div class="rung-details">Acts as a fallback catch statement if no conditional jumps were triggered (signaling all warehouse slots are full). It shifts the system into a standby routine, flashes a full warning indicator light on the control box, and cuts power to the entry emitter.</div>
+            <div class="logic-tags">
+                <span class="tag">All_Slots_Occupied</span>
+                <span class="tag tag-output">Full_Warning_Light</span>
+                <span class="tag tag-output">Target_Floor = 1</span>
+                <span class="tag tag-output">Emitter_Halt</span>
+            </div>
+        </div>
+    </div>
+
+
+    <h4 class="howitworks">3. Lift Transit & Vertical Positioning</h4>
+    
+    <div class="rung-container">
+        <div class="rung-header">Rung 6: Elevator Entry Registration & Target Landing (L0)</div>
+        <div class="rung-body">
+            <div class="rung-details">The execution target point for the <strong>L0</strong> jump commands. When a box fully clears the internal elevator entry/left sensor, it latches the upward travel flag. Simultaneously, it triggers a baseline clear operation to reset the warehouse full flag if space opens up.</div>
+            <div class="logic-tags">
+                <span class="tag">Elevator_Left_Sensor</span>
+                <span class="tag tag-output">Aktivator_Flag (Set)</span>
+                <span class="tag tag-output">Reset_Full_Status</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="rung-container">
+        <div class="rung-header">Rung 7: Upper Boundary Level Flag</div>
+        <div class="rung-body">
+            <div class="rung-details">Monitors specific uppermost thresholds, generating a dedicated positional status marker when the elevator platform reaches Floor 4.</div>
+            <div class="logic-tags">
+                <span class="tag">Floor_4_Proximity</span>
+                <span class="tag tag-output">Floor_4_Status_Flag</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="rung-container">
+        <div class="rung-header">Rung 8: Elevator Lift Motor Actuation</div>
+        <div class="rung-body">
+            <div class="rung-details">Evaluates transit flags to govern vertical movement. While the <code>Aktivator</code> bit remains high, the primary lift motor is powered continuously to elevate the cargo cabin until it matches the targeted destination.</div>
+            <div class="logic-tags">
+                <span class="tag">Aktivator_Flag</span>
+                <span class="tag tag-output">Lift_Motor_Up</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="rung-container">
+        <div class="rung-header">Rung 9: Motion Interlock & Standby State</div>
+        <div class="rung-body">
+            <div class="rung-details">Controls the structural execution hold state (Stun) of the elevator cabin, interlocking the lift during data updates until it safely steps down back at Floor 1.</div>
+            <div class="logic-tags">
+                <span class="tag">Stun_Condition</span>
+                <span class="tag tag-output">Transit_Interlock</span>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="howitworks">4. Unloading, Braking & Return Sequences</h4>
+    
+    <div class="rung-container">
+        <div class="rung-header">Rung 10: Discharge Verification & Descent Timer Trigger</div>
+        <div class="rung-body">
+            <div class="rung-details">Monitors the photoelectric Exit Sensor placed on the outer edge of the elevator platform. When a box departs and clears the sensor, a off-delay timer flag (<code>Downer</code>) is launched, guaranteeing structural clearance before bringing the lift back down.</div>
+            <div class="logic-tags">
+                <span class="tag">Exit_Sensor_Falling_Edge</span>
+                <span class="tag tag-output">Downer_Descent_Timer</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="rung-container">
+        <div class="rung-header">Rungs 11 & 12: Coordinated Material Transfer</div>
+        <div class="rung-body">
+            <div class="rung-details">Runs real-time comparative checks between the current vertical level and assigned target level variables. When a match is achieved, it powers the internal motorized conveyor of the elevator cab in tandem with that specific level's receiving rack conveyor.</div>
+            <div class="logic-tags">
+                <span class="tag">Current_Floor == Target_Floor</span>
+                <span class="tag tag-output">Cab_Conveyor_Forward</span>
+                <span class="tag tag-output">Rack_Conveyor_Receive</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="rung-container">
+        <div class="rung-header">Rungs 13 & 14: Inductive Level Deceleration (Braking Interlocks)</div>
+        <div class="rung-body">
+            <div class="rung-details">Handles precison leveling of the heavy metallic platform. By verifying inputs from non-contact inductive proximity sensors, the logic safely invokes the motor's <code>Slow</code> speed state *only* when arriving at the selected target level during ascent, preventing structural mechanical overshoot.</div>
+            <div class="logic-tags">
+                <span class="tag">Inductive_Proximity_Sensor</span>
+                <span class="tag">Ascent_Activeward</span>
+                <span class="tag tag-output">Lift_Motor_Slow_Speed</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary-box">
+        <h3>Operational Summary Note:</h3>
+        <p>The program architecture ensures safe vertical buffering by integrating optical retro-reflective sensors for cargo indexing and robust inductive proximity elements for structural alignment. Deceleration circuits prevent mechanical damage, and conditional logic loops effectively automate continuous package sorting with fallback safety checks.</p>
+    </div>
+
+        <h3>Demonstration</h3>
+        <div class="video-container">
+            <!-- Replace YOUR_VIDEO_ID with the actual ID from your YouTube URL -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FTh6HkZ9Xxo?si=JXVjOMOC7pBupGyn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </div>
+    <h3>Downloads</h3>
+    <p>The files for the entire simulation is available for download <a href="../../downloads/Elevator Automation Simulation Files.zip" download>here</a>.</p>
+    </article>
+
+    
+
+
+    <footer>
+        <p>&copy; 2026 Nigel Nayar.</p>
+    </footer>
+</body>
+</html>
