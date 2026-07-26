@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<style> 
+input {font-family: Comic Sans MS;}
+	div{font-family: Impact; color: blue; }
+	body {background: cyan;}
+		h1{ color: white; font-family: Comic Sans MS;}
+			a {text-decoration: none;}
+	</style>
+	</head>
+	<body>
+	<img src="NigelProductionText.png" style="width:250px;height:140px;display: block; margin-left: auto; margin-right: auto;"><br>
+	
+	<div><a href=nigelproduction.html"><h2>Home</h2></a><h2>Sign Up</h2></div><br>
+	<input placeholder=Username type=required><br>
+	<input placeholder=Email type=email type=required><br>
+	<input placeholder=Password type=Password type=required><br>
+	<p style="font-family:Comic Sans MS; font-size: 12px;">Remember Me</p> <input type=checkbox><br>
+	<input type=Submit>
+	</body>
+	</html>

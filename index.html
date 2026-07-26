@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nigel Nayar | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,8 +13,8 @@
         <div class="container">
             <span class="logo">Nigel Nayar</span>
             <ul>
-                <li><a href="about/index.html">About</a></li>
-                <li><a href="projects/index.html">Projects</a></li>
+                <li><a href="about/">About</a></li>
+                <li><a href="projects/">Projects</a></li>
                 <li><a href="mailto:nigelnayar0@gmail.com">Contact</a></li>
             </ul>
         </div>
@@ -25,9 +27,15 @@
         <p>I am currently an Electrical Engineering student at Fakultas Teknik Universitas Indonesia.</p>
         
         <div class="social-links">
-            <a href="https://github.com/nigelnayar" class="btn gh-btn">GitHub</a>
-            <a href="https://www.linkedin.com/in/nigelnayar0/" class="btn li-btn" target="_blank">LinkedIn</a>
-            <a href="https://www.instagram.com/nigelthenerd" class="btn ig-btn" target="_blank">Instagram</a>
+            <a href="https://github.com/nigelnayar" class="btn gh-btn" target="_blank" rel="noopener">
+                <img src="assets/icons/github.svg" alt="GitHub" class="icon icon-sm"> GitHub
+            </a>
+            <a href="https://linkedin.com/in/nigelnayaro" class="btn li-btn" target="_blank" rel="noopener">
+                <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="icon icon-sm"> LinkedIn
+            </a>    
+            <a href="https://www.instagram.com/nigelthenerd" class="btn ig-btn" target="_blank" rel="noopener">
+                <img src="assets/icons/instagram.svg" alt="Instagram" class="icon icon-sm"> Instagram
+            </a>
         </div>
     </div>
 </header>
@@ -38,27 +46,180 @@
             <div class="card">
                 <h3>Web Integrated IOT Based Automatic Pill Dispenser</h3>
                 <p>I developed a simple IOT based  Automatic Pill Dispenser that is integrated to the web using ESP32 and google firebase service.</p>
-                <a href="projects/Web_Integrated_IOT_Based_Automatic_Pill_Dispenser/index.html">View Details →</a>
+                <a href="projects/Web_Integrated_IOT_Based_Automatic_Pill_Dispenser/">View Details →</a>
             </div>
             <div class="card">
                 <h3>Smart Vertical Buffer System</h3>
                 <p>A smart elevator Automation simulation that is designed to distribute pallets efficiently through an input track to available storage level.</p>
-                <a href="projects/smartverticalbuffersystem/index.html">View Details →</a>
+                <a href="projects/smartverticalbuffersystem/">View Details →</a>
             </div>
             <div class="card">
                 <h3>CMOS Two-Stage Fully Differential Amplifier</h3>
                 <p>A stable CMOS Two-Stage Fully Differential Amplifier designed and simulated in Xschem with IHPSG13G2 PDK technology, achieving high open loop gain and CMRR.</p>
-                <a href="projects/twostageamp/index.html">View Details →</a>
+                <a href="projects/twostageamp/">View Details →</a>
             </div>
             <div class="card">
                 <h3>USB C R-2R Ladder 16-Bit Digital to Analog Converter(DAC) </h3>
                 <p>My partner and I recently developed a Digital to Analog converter by integrating the Ladder Network Conversion architecture.</p>
-                <a href="projects/USB_C_R-2R_Ladder_16-Bit_Digital-to-Analog_Converter/index.html">View Details →</a>
+                <a href="projects/USB_C_R-2R_Ladder_16-Bit_Digital-to-Analog_Converter/">View Details →</a>
             </div>
             <div class="card">
                 <h3>Class B Audio Amplifier</h3>
                 <p>A class B analog audio amplifier that is more efficient than other amplifier classes.</p>
                 <a href="#">View Details →</a>
+            </div>
+            <div class="card">
+                <h3>IoT Mercury Water Measuring Device (NAMHED)</h3>
+                <p>Arduino-based water quality analyzer built for the Ki Hajar STEM competition 2022.</p>
+                <a href="projects/iotmercurydetector/">View Details →</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="experience" class="container">
+        <h2>Work Experience</h2>
+        <div class="card-list">
+            <div class="card">
+                <h3>PT Elsewedy Electric Indonesia</h3>
+                <p class="subtitle">Summer Intern</p>
+                <p class="date">Cileungsi, Bogor Regency, Jawa Barat | Jul 2026 – Present</p>
+                <ul>
+                    <li>Selected for a 5-week structured internship program bridging academic theory with the Power Transformers and high-voltage grid industry.</li>
+                    <li>Undergoing intensive in-class technical training alongside professional development, team building, and cross-functional collaboration modules.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Asisten Mahasiswa MKF FTUI</h3>
+                <p class="subtitle">Teaching Assistant</p>
+                <p class="date">Fakultas Teknik, Universitas Indonesia | Feb 2026 – Jun 2026</p>
+                <ul>
+                    <li>Evaluated and graded coursework, quizzes, and exams, providing detailed and constructive feedback to enhance student comprehension.</li>
+                    <li>Facilitated assistance sessions, guiding students through complex algorithmic concepts and problem-solving strategies.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <h2>Skills</h2>
+        
+        <div class="skills-block">
+        <h3>Technical Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="assets/icons/python.svg" alt="Python" class="skill-icon">
+                <span>Python</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/cpp.svg" alt="C++" class="skill-icon">
+                <span>C++</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/c.svg" alt="C" class="skill-icon">
+                <span>C</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/matlab.png" alt="MATLAB" class="skill-icon">
+                <span>MATLAB</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/esp32.svg" alt="ESP32" class="skill-icon">
+                <span>ESP32</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/arduino.svg" alt="Arduino" class="skill-icon">
+                <span>Arduino</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/kicad.svg" alt="KiCad" class="skill-icon">
+                <span>KiCad</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/xschem.png" alt="Xschem" class="skill-icon">
+                <span>Xschem</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/ltspice.jpg" alt="LT" class="skill-icon">
+                <span>LTspice</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/plc.png" alt="PLC" class="skill-icon">
+                <span>PLC Programming</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/scada.jpeg" alt="SCADA" class="skill-icon">
+                <span>SCADA Systems</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/sensors.jpeg" alt="Sensors" class="skill-icon">
+                <span>Sensors & Actuators</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/verilog.svg" alt="V" class="skill-icon">
+                <span>Verilog</span>
+            </div>
+            <div class="skill-card">
+                <img src="assets/icons/analog-circuits.svg" alt="Analog Circuits" class="skill-icon">
+                <span>Analog Circuits</span>
+            </div>
+        </div>
+    </div>
+
+        <div class="skills-block">
+            <h3>Soft Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-tag soft">Public Speaking</div>
+                <div class="skill-tag soft">Teamwork & Adaptability</div>
+                <div class="skill-tag soft">Verbal Communication</div>
+                <div class="skill-tag soft">Critical Thinking & Root Cause Analysis</div>
+            </div>
+        </div>
+
+        <div class="skills-block">
+            <h3>Languages</h3>
+            <div class="skills-grid">
+                <div class="skill-tag lang"><strong>Bahasa Indonesia:</strong> Native</div>
+                <div class="skill-tag lang"><strong>English:</strong> Fluent (IELTS Band 8.0)</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="container">
+        <h2>My Certificates</h2>
+        <div class="grid">
+                        <div class="card certificate-card">
+                <div class="cert-header">
+                    <h3>IELTS Academic Certificate</h3>
+                    <span class="cert-badge">Band 8</span> <!-- Replace with your actual overall band score -->
+                </div>
+                <p class="cert-meta"><strong>Issuer:</strong> IDP / British Council • <strong>Issued:</strong> Nov 2024</p>
+                <p>I have C1 Advanced level English proficiency across Academic Listening, Reading, Writing, and Speaking modules.</p>
+                
+                <!-- Option A: If you uploaded a PDF scan in assets/certificates/ -->
+                <a href="assets/certificates/IELTS_Certificate_Nigel_Nayar_2024.pdf" target="_blank" rel="noopener">View Test Report Form →</a>
+                
+                <!-- Option B: If verified via IELTS online verification link -->
+                <!-- <a href="YOUR_VERIFICATION_LINK" target="_blank" rel="noopener">Verify Online →</a> -->
+            </div>
+
+            <div class="card certificate-card">
+                <div class="cert-header">
+                    <h3>Industrial IoT & Automation</h3>
+                </div>
+                <p class="cert-meta"><strong>Issuer:</strong> ID Networkers • <strong>Issued:</strong> Jan 2026</p>
+                <p>Proficiency in industrial automation control systems, SCADA, and PLC ladder logic programming.</p>
+                <a href="assets/certificates/sertifikat-nigel-denaya-manuwu-nayar-industrial-iot-automation-12-13-14-15-januari-2026.pdf" target="_blank" rel="noopener">View Certificate →</a>
+            </div>
+
+            <div class="card certificate-card">
+                <div class="cert-header">
+                    <h3>MATLAB Training</h3>
+                </div>
+                <p class="cert-meta"><strong>Issuer:</strong> EXERCISE FTUI • <strong>Issued:</strong> Nov 2024</p>
+                <p>Training on data analysis, numerical modeling, and matrix calculations in MATLAB environments.</p>
+                <a href="assets/certificates/MATLAB_Certificate_Nigel_Nayar.png" target="_blank" rel="noopener">View Certificate →</a>
             </div>
             
         </div>

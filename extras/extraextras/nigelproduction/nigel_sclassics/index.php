@@ -1,0 +1,551 @@
+<?php
+session_start();
+      session_destroy();?>
+      <!DOCTYPE html>
+
+      <html lang="en" dir="ltr">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width">
+          <title>nigelproduction</title>
+          <link rel="stylesheet" href="\master.css">
+          <link rel="shortcut icon" href="\favicon.ico">
+          <style media="screen">
+          .right {
+            float: right;
+            display: inline-block;
+          }
+
+          .mySlides {display: none}
+
+          /* Slideshow container */
+          .slideshow-container {
+            max-width: 670px;
+            position: relative;
+            margin: auto;
+          }
+
+          /* Next & previous buttons */
+          .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+          }
+
+          /* Position the "next button" to the right */
+          .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+          }
+
+          /* On hover, add a black background color with a little bit see-through */
+          .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+          }
+
+          /* Caption text */
+          .text {
+            background-color: rgba(128, 128, 128, 0.5) ;
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 646px;
+            text-align: center;
+          }
+
+          /* Number text (1/3 etc) */
+          .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+          }
+
+
+
+          .active, .dot:hover {
+            background-color: #717171;
+          }
+
+          /* Fading animation */
+          .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+          }
+
+          .work2 {
+
+              display:inline;
+              width: 24px;
+              height: 20px;
+              padding-top: 20px;
+              outline: none;
+              cursor: pointer;
+              transition: 0.22px;
+          }
+
+          @-webkit-keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+          }
+
+          @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+          }
+
+          /* On smaller screens, decrease text size */
+          @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+          }
+          @media screen and (max-width: 900px) {
+            .header {
+              width: 200%;
+              position: relative;
+
+            }
+            .linker {
+              display: none;
+            }
+            .lol {
+              width: 100%;
+            }
+            .drop {
+              display: none;
+            }
+            .logo {
+              position: relative;
+              left: 0 auto;
+              right: 0 auto;
+
+            }
+            .mobilemenu {
+              width: 100%;
+              display: block;
+              position: relative;
+              text-align: center;
+            }
+
+            .content {
+
+              position: relative;
+              text-align: center;
+
+            }
+            .container {
+              display: none;
+            }
+            .bar1 {
+              display: none;
+            }
+            .bar3 {
+              display: none;
+            }
+            .bar2 {
+              display: none;
+            }
+            .moreofmorebuttons {
+                display: none;
+            }
+            .mobilemore {
+              display: block;
+                text-align: center;
+            }
+            .moreof {
+              display: none;
+            }
+          }
+          @media screen and (max-width: 600px) {
+            .header {
+              width: 200%;
+              position: relative;
+              left: 25%;
+              right: 75%;
+            }
+            .moreofmorebuttons {
+                display: none;
+            }
+            .mobilemore {
+              display: block;
+              text-align: center;
+            }
+            .moreof{
+              display: none;
+            }
+            .linker {
+              display: none;
+            }
+            .work {
+              display: none;
+            }
+            .lol {
+              width: 100%;
+            }
+            .drop{
+              position: absolute;
+              width: 1px;
+              left: 40%;
+              overflow: hidden;
+
+
+            }
+            .logo {
+              position: relative;
+              left: 0 auto;
+              right: 0 auto;
+              left: 25%;
+              right: 75%;
+            }
+            .mobilemenu {
+              width: 100%;
+              display: block;
+              position: relative;
+              text-align: center;
+              left: 25%;
+              right: 75%;
+              border-bottom: solid;
+              border-width: thin;
+              border-color: white;
+            }
+            .mobilelinks {
+              display: block;
+            }
+            .motext {
+              display: inline-block;
+            }
+            .mobil {
+              display: block;
+              position: relative;
+              text-align: center;
+              left: 50%;
+              right: 50%;
+              width: 20px;
+              height: 20px;
+            }
+            .content {
+
+              position: relative;
+              text-align: center;
+              left: 50%;
+              right: 50%;
+            }
+            .container {
+              display: none;
+            }
+            .bar1 {
+              display: none;
+            }
+            .bar3 {
+              display: none;
+            }
+            .bar2 {
+              display: none;
+            }
+            .toptext {
+              display: block;
+              position: relative;
+              text-align: center;
+              left: 25%;
+              right: 75%;
+            }
+            .ytlink{
+              font-size: 10px;
+            }
+          }
+
+          </style>
+        </head>
+        <body class="index" id="all">
+          <div class="header" style="max-width:100%; height:auto;">
+          <a href="\"><img src="\TheNigelProductionText.png" alt="logo" class="logo"></a>
+              <label><a href="\buymerch.php" class="linker" >Buy Merch</a></label> <label><a href="\SignIN.php" class="linker">Join The Community</a></label>
+              <a href="https://www.youtube.com/channel/UCzbNyed8zaQvZkqgBztwjqQ"><img src="\yt.png" alt="youtube" class="work"></a>
+              <a href= "https://www.patreon.com/nigelproduction"><img src="\ptrn.png" alt="patreon" class="work">
+              </a>
+              <a href= "https://twitter.com/nigel_not"><img src="\twt.png" alt="patreon" class="work">
+              </a>
+
+               <div class="container" onclick="myFunction(this)" style=" position: relative; ">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <div class="drop" id="drop">
+        <a href="#">Contact</a><br><br>
+        <a href="\about">About</a><br><br>
+        <a href="\briefq&a">Brief QnA</a><br><br>
+        <a href="\Community/profilepage.php">Profile</a><br><br>
+        <h3>YOUTUBE VIDEOS</h3>
+        <a href="https://www.youtube.com/watch?v=cWwlT4lfetA"><Img src="https://i.ytimg.com/vi/cWwlT4lfetA/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDGk5eARn_2RU40PR3kCEa-LM0uQw"</img></a><br>
+        <label>GTA 6 But Better</label><br>
+        <a href="https://www.youtube.com/watch?v=2HkmI15kJco"><img src="https://i.ytimg.com/vi/2HkmI15kJco/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDDDQDUl86mqF1doyEJ2LwShF3J1w"</img></a><br>
+        <label>3rd MCU Spiderman Sequel (a bad sequel)</label><br>
+      </div><br>
+          </div>
+          <div class="mobilemenu">
+            <br>
+              <a href="\#" >Buy Merch</a><br><br>
+              <a href="\signIN.php" >Join The Community</a><br><br>
+              <div class="mobilelinks">
+                <a href="https://www.youtube.com/channel/UCzbNyed8zaQvZkqgBztwjqQ"><img src="yt.png" alt="youtube" class="mobil"></a><br><label class="motext">Subscribe On Youtube</label><br><br>
+                <a href= "https://www.patreon.com/nigelproduction"><img src="ptrn.png" alt="patreon" class="mobil">
+                </a><br><label class="motext">Become A True Patron</label><br><br>
+                <a href= "https://twitter.com/nigel_not"><img src="twt.png" alt="patreon" class="mobil">
+                </a><br><label class="motext">Follow On Twitter</label><br><br>
+              </div>
+          </div>
+          <br>
+
+
+
+          <div class="toptext">
+            <label style=" font-weight: bold;">NIgel's Classics</label><br><br><br>
+
+            <label>Click On The Title To start downloading</label><br>
+            <span>There is a bug where the download will start automaitcally. I don't know how to fix it.</span>
+            <br><br><br><br>
+        <label>2nd old: <br><br>-> <a style="text-decoration: underline;" href="https://www.youtube.com/channel/UC8S8kZlSLUrZ8YriMcRnf7A" class="ytlink">https://www.youtube.com/channel/UC8S8kZlSLUrZ8YriMcRnf7A</a></label><br><br>
+        <label>1st old: <br><br>-> <a style="text-decoration: underline;" href="https://www.youtube.com/channel/UC49qfOUXIQabPtNP3smj1hw" class="ytlink">https://www.youtube.com/channel/UC49qfOUXIQabPtNP3smj1hw</a></label>
+        <br><br><br><br><br><br><br>
+          </div>
+
+
+          <span style="padding-left: 340px;  ">Recommended:</span>
+          <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="\Perang.jpeg" style="width: 100%; height: 377;">
+            <a href="\Perang1.mp4" download= "Perang Lapangan"><div class="text">Perang Lapangan Pertama</div></a>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 5</div>
+              <img src="\Santa.jpeg" style="width: 100%; height: 377;">
+             <a href="\IsSantaReal.mp4" download= "Is Santa Real(Indonesian)"><div class="text">Is Santa Real? (Indonesian)</div></a>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 5</div>
+              <img src="\just.jpg" style="width: 100%; height: 377;">
+             <a href="\Just.mp4" download= "Just A Walking Animation"><div class="text">Just A Walking Animation</div></a>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">4 / 5</div>
+              <img src="\DonUji.jpeg" style="width: 100%; height: 377;">
+             <a href="\DonUji.mp4" download= "Don Uji Nyali"><div class="text">Don Uji Nyali</div></a>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+              <img src="\keep.jpeg" style="width: 100%; height: 377;">
+             <a href="\keep.mp4" download="Keep Clam And Besok Libur"><div class="text">Keep Calm And Besok Libur</div></a>
+          </div>
+
+
+
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          </div>
+          <br>
+
+
+
+          <script>
+          var slideIndex = 1;
+          showSlides(slideIndex);
+
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+          }
+          var slideIndex = 0;
+          showSlidesauto();
+
+          function showSlidesauto() {
+            var i;
+            var slidesauto = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slidesauto.length; i++) {
+              slidesauto[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slidesauto.length) {slideIndex = 1}
+            slidesauto[slideIndex-1].style.display = "block";
+            setTimeout(showSlidesauto, 3700); // Change image every 3.7 seconds
+          }
+          </script>
+
+
+          <h3>Watch Here!</h3>
+          <br><br><br>
+          <div class="right">
+            <label><a href="\Ketika.mp4" download= "Ketika Teman Memberi Kita Makan">
+              Ketika Teman Memberi Kita Makan
+
+            </a><br><em>[2 May 2017]</em></label>
+            <br><br>
+            <video width="320" height="200" poster="\ketika.jpeg" controls>
+              <source src="\Ketika.mp4"  type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
+            <br><br><br>
+            <label><a href="\Besoklibur2.mp4" download= "Besoklibur2">
+              Besok libur 2
+          </a><br><em>[27 Nov 2016]</em>
+            </label>
+
+            <br><br>
+            <video width="320" height="200" poster="\besoklibur2.jpeg" controls>
+              <source src="\Besoklibur2.mp4" type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
+            <br><br><br>
+            <label><a href="\DonUji.mp4" download= "Don Uji Nyali">
+              Don Uji Nyali
+
+            </a><br><em>[4 Nov 2016]</em></label>
+
+            <br><br>
+            <video width="320" height="200" poster="\DonUji.jpeg" controls>
+              <source src="\DonUji.mp4" type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
+            <br><br><br>
+            <label><a href="\Perang1.mp4" download= "Perang Lapangan">
+              Perang Lapangan Pertama
+
+            </a><br><em>[18 May 2017]</em></label>
+
+            <br><br>
+            <video width="320" height="200" poster="\Perang.jpeg" controls>
+              <source src="\Perang1.mp4" type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
+            <br><br><br>
+
+            <label><a href="Bloopers.mp4" download= "Besoklibur2 Bloopers">
+              Besoklibur2 Bloopers
+
+            </a><br><em>[27 Nov 2016]</em></label>
+
+            <br><br>
+            <video width="320" height="200" controls>
+              <source src="Bloopers.mp4" type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
+            <br><br><br>
+          </div>
+        <label><a href="\Temanmintamaaf.mp4" download= "Ketika Teman Minta Maaf">
+          Ketika Teman Minta Maaf
+
+        </a><br><em>[2 May 2017]</em></label><br><br>
+
+
+        <video width="320" height="200" controls>
+          <source src="\Temanmintamaaf.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+        <br><br><br>
+        <label><a href="\IsSantaReal.mp4" download= "Is Santa Real(Indonesian)">
+          Is Santa Real? (Indonesian)
+      </a><br><em>[9 Dec 2018]</em>
+        </label>
+
+        <br><br>
+        <video width="320" height="200" poster="\Santa.jpeg" controls>
+          <source src="\IsSantaReal.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+        <br><br><br>
+        <label><a href="\Just.mp4" download= "Just A Walking Animation">
+          Just A Walking Animation
+      </a><br><em>[6 Jul 2018]</em>
+        </label>
+
+        <br><br>
+        <video width="320" height="200" controls>
+          <source src="\Just.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+      <br><br><br>
+      <label><a href="\keep.mp4" download>
+        Keep Calm And Besok Libur
+
+      </a><br><em>[27 Nov 2016]</em></label>
+
+      <br><br>
+      <video width="320" height="200" poster="\keep.jpeg" controls>
+        <source src="\keep.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+      </video>
+      <br><br><br>
+
+
+
+
+      <label><a href="Be.mp4" download= "Be Like Mike">
+        Be Like Mike
+    </a><br><em>[OLPDEHODV MXQH 2019]</em>
+      </label>
+
+      <br><br>
+      <video width="320" height="200" controls>
+        <source src="Be.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+      </video>
+    <br><br><br>
+
+
+      <br><br><br><br><br><br><br><br><br><br><br>
+
+        <div style="border-top: solid; border-width: thin;">
+          <label>Copyright (c) 2020 Copyright NIgelProduction All Rights Reserved.</label>
+          <br>
+          <br>
+          <br>
+          <br>
+          <a href="#"><img src="\discord.png" alt="discord" class="work2">  <span style=" padding-left: 20px;  ">Join My Discord Server!</span></a>
+          <a href="#"><img src="\ig.png" alt="ig" class="work2" style=" padding-left: 35px;  " > <span style=" padding-left: 20px;  ">Follow Chadnester's Instagram!</span></a>
+          <a href="#" style="padding-left: 20px;display: inline-block;     "> <h2 style=" display: inline-block; "  >@</h2> <span style=" padding-left: 15px;  ">Email Me.</span></a>
+          <br>
+        <br>
+        <br>
+        <br>
+        <label class="bottomtext">If you want to support me, consider donating me by clicking the patreon icon!</label>
+        </div>
+      <script type="text/javascript" src="\script.js">
+
+      </script>
+      </body>
+      </html>

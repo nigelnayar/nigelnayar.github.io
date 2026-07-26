@@ -1,0 +1,76 @@
+<?php include 'header.inc.php'; ?>
+<?php
+session_start();
+$unlog = @$_POST['unlog'];
+$pwlog = @$_POST['pwlog'];
+$sign = @$_POST['sign'];
+
+$pwe = password_hash($pwlog, PASSWORD_DEFAULT);
+$pwloge = md5($pwlog);
+$d = date("Y-m-d");
+$_SESSION["un"] = $unlog;
+	$_SESSION["d"] = $d;
+	$query = mysqli_query($conn, "SELECT * FROM users WHERE Username = '".$unlog. "' AND Password = '".$pwloge. "' " );
+		if (isset($sign)) {
+			if(mysqli_num_rows(  $query) == 1){
+
+					header("location: community.php");
+				}
+		else {
+			echo "your data's not correct";
+		}}
+	?>
+	<html lang="en" dir="ltr">
+		<head>
+			<meta charset="utf-8">
+			<link rel="stylesheet" href="master.css">
+			<title>Community</title>
+		</head>
+
+<body>
+	<?php include ("connect.inc.php");?>
+	<!DOCTYPE html>
+
+	  <body>
+	    <div class="header">
+	        <a href="nigelproduction.php" ><img src="TheNigelProductionText.png" alt="logo" class="logo"></a>
+	        <a href="buymerch.html" class="linker" >Buy Merch</a> <label class= "active">Join The Community</label>
+	        <a href="https://www.youtube.com/channel/UCzbNyed8zaQvZkqgBztwjqQ"><img src="yt.png" alt="youtube" class="work"></a>
+	        <a href= "https://www.patreon.com/nigelproduction"><img src="ptrn.png" alt="patreon" class="work">
+	        </a>
+	        <a href= "https://twitter.com/nigel_not"><img src="twt.png" alt="patreon" class="work">
+	        </a>
+	        <div class="container" onclick="myFunction(this)">
+	  <div class="bar1"></div>
+	  <div class="bar2"></div>
+	  <div class="bar3"></div>
+	</div>
+	<div class="drop" id="drop">
+	  <a href="#">Contact</a><br><br>
+	  <a href="about.html">About</a><br><br>
+	  <a href="briefQnA.html">Brief QnA</a><br><br>
+	  <a href="profilepage.php">Profile</a><br>
+	  <h3>YOUTUBE VIDEOS</h3>
+	  <a href="https://www.youtube.com/watch?v=cWwlT4lfetA"><Img src="https://i.ytimg.com/vi/cWwlT4lfetA/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDGk5eARn_2RU40PR3kCEa-LM0uQw"</img></a>
+	  <p>GTA 6 But Better</p><br>
+	  <a href="https://www.youtube.com/watch?v=2HkmI15kJco"><img src="https://i.ytimg.com/vi/2HkmI15kJco/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDDDQDUl86mqF1doyEJ2LwShF3J1w"</img></a><br>
+	  <p>3rd MCU Spiderman Sequel (a bad sequel)</p><br>
+	</div>
+	    </div>
+
+	<h3>Join The Community Today!</h3>
+	<form class="" action="signIN.php" method="post">
+		<label for="">Username:</label><br>
+		<input type="text" name="unlog" value="" class="bar" size="30" required><br>
+		<label for="">Password:</label><br>
+		<input type="password" name="pwlog" value="" class="bar" size="30" id="pw" autocomplete="off" required><br><br>
+		<button type="button" class="showpw" id="sbutt" onclick="showpw()">O</button> <label>show password</label>
+		<br><br>
+		<button type="submit" name="sign">SignIn</button>
+	</form>
+	<p>No Account yet? <a style="text-decoration: underline;" href="signUP.php">Make One!</a></p>
+	<script type="text/javascript" src="script.js">
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mystyle {
+  width: 100%;
+  padding: 25px;
+  background-color: coral;
+  color: white;
+  font-size: 25px;
+  box-sizing: border-box;
+}
+.mystyle2 {
+  width: 100%;
+  padding: 25px;
+  background-color: coral;
+  color: white;
+  font-size: 25px;
+  box-sizing: border-box;
+}
+.lol {
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<p>Click the "Try it" button to add the "mystyle" class to the DIV element:</p>
+
+<button onclick="smemore()">Try it</button>
+
+<div id="myDIV">
+This is a DIV element.
+</div>
+<div id="much" class="lol">
+This is a DIV element.
+</div>
+<div id="more">
+This is a DIV element.
+</div>
+<script>
+function smemore() {
+   var element = document.getElementById("myDIV");
+   element.classList.toggle("mystyle");
+   document.getElementById("much").classList.add("mystyle2");
+   document.getElementById("more").classList.add("mystyle");
+}
+</script>
+
+</body>
+</html>

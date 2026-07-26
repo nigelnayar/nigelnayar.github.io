@@ -1,0 +1,8 @@
+p { font-style: italic; font-family: Comic Sans MS; color: red;}
+.test { font-family: Impact; border: solid; width: 13%; border-radius: 10px; }
+img { height: 100px; width: 100px; border: solid; border-radius: 10px;}
+	body {background-image: url('bg.jpeg');
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+	background-size: cover;}
+  

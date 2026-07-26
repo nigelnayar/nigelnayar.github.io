@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAMHED | Nigel Nayar</title>
+    <!-- Links to your main stylesheet in the root folder -->
+    <link rel="stylesheet" href="../../style.css">
+
+    <!-- MathJax for rendering LaTeX math formulas -->
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <span class="logo"><a href="../../index.html">Nigel Nayar</a></span>
+            <ul>
+                <li><a href="../../about/index.html">About</a></li>
+                <li><a href="../../projects/index.html">Projects</a></li>
+                <li><a href="mailto:nigelnayar0@gmail.com">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="container">
+        <h1>Mercury Measuring Device : NAMHED </h1>
+        
+
+        <h2>Project Overview</h2>
+        <p>NAMHED [<strong>Nigel Adnan Mutia Hydrargyrum Measuring Device</strong>] is an innovation created using a semi-automatic system.It functions as a tool to measure the mercury content in a solution by utilizing the mass changes that occur at an inert cathode after electrolysis. Conventional mercury measuring technology is currently known to be relatively expensive and scarce. With the creation of this device, hard-to-reach areas can easily and practically determine mercury levels in water due to illegal mining in rivers near local residents.
+
+            The NAMHED innovation is expected to inspire the younger generation in the current 4.0 era, with several advantages: it is economical, environmentally friendly, operates quickly and is easy to use, and its small size makes it easy to carry anywhere. This contrasts with conventional devices, which are known to be larger.</p>
+        <img src="../../images/topdownview.png" alt="Description of the image">
+        <p class="justified-text">This project is a simulation of smart elevator automation designed to efficiently distribute pallets from the input line to available storage levels. 
+            This mechanism operates by scanning the occupancy status at each level using retro-reflective sensors, then instructing the elevator to move pallets only to the detected empty shelf slots, thus preventing the accumulation of goods. 
+            
+            This system uses a roller conveyor as a pallet base and integrates programming logic in the form of array data processing to track warehouse occupancy, and is equipped with an interactive operator panel for real-time system status monitoring.</p>
+
+            <h3>Project Demonstration Video</h3>
+            <p class="justified-text">
+                Watch the full video report detailing our field interviews with local communities in Mendawai, the step-by-step assembly of the Arduino & HX711 prototype, and live water testing across river samples in Central Kalimantan (<strong>It's in Indonesian. Make sure you are familiar with the language!</strong>):
+                
+                
+            </p>
+            
+            <div class="video-container" style="margin: 20px 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #d0d7de;">
+                <!-- Replace 'YOUR_YOUTUBE_VIDEO_ID' with your actual YouTube video ID -->
+                <iframe 
+                    src="https://youtu.be/BDzktuAoA-M?si=_yAFqWsOp89YeRRI" 
+                    title="Mercury Content in Water Detector Video Demonstration"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                </iframe>
+            </div>
+
+
+            <h3>Problem Background & Field Findings</h3>
+            <p class="justified-text">
+                According to Indonesian Health Ministry Regulation (Permenkes No. 492/2010), safe drinking water must contain no more than <strong>0.001 mg/L</strong> of mercury. Field interviews conducted with riverbank residents in Mendawai revealed that while communities regularly experience iron odor and skin irritation from river exposure, awareness of latent mercury toxicity remains low due to a lack of immediate visual feedback and absent local test kits.
+            </p>
+
+            <h3>Measurement Principle & Working Mechanism</h3>
+            <div class="howitworks">System Mechanics</div>
+            <p class="justified-text">
+                The device measures mercury concentrations by combining a localized electrolysis stage with a load-cell mass sensor translated through an Arduino unit:
+            </p>
+
+            
+
+        <div class="rung-container">
+                <div class="rung-header">Step 1: Electrolysis Deposition</div>
+                <div class="rung-body">
+                    <p class="rung-details">A 100 mL water sample undergoes simple electrolysis. Dissolved mercury ions ($\text{Hg}^+$) migrate and precipitate directly onto the cathode surface.</p>
+                    <div class="logic-tags">
+                        <span class="tag tag-output">100 mL Sample</span>
+                        <span class="tag tag-jump">$\text{Hg}^+$ Deposition</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rung-container">
+                <div class="rung-header">Step 2: Signal Conditioning & Data Acquisition</div>
+                <div class="rung-body">
+                    <p class="rung-details">The dried cathode is placed onto a load-cell platform connected to an <strong>HX711 24-bit ADC amplifier module</strong>. The HX711 translates micro-gram physical weight shifts into digital signals readable by the Arduino micro-controller.</p>
+                    <div class="logic-tags">
+                        <span class="tag">Load Cell</span>
+                        <span class="tag tag-output">HX711 ADC Module</span>
+                        <span class="tag">Arduino UNO</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rung-container">
+                <div class="rung-header">Step 3: Interactive Calculation & Display</div>
+                <div class="rung-body">
+                    <p class="rung-details">Using a matrix keypad, the user inputs the initial cathode weight ($m_1$) and sample volume ($V = 100\text{ mL}$). The Arduino computes the mass difference ($\Delta m = m_2 - m_1$) to display the net mercury concentration ($\text{mg/L}$) on an $16\times2$ LCD screen.</p>
+                    <div class="logic-tags">
+                        <span class="tag">4x4 Keypad</span>
+                        <span class="tag tag-jump">LCD 16x2 Output</span>
+                    </div>
+                </div>
+            </div>  
+<h2>Experimental Results & Analysis</h2>
+            <p class="justified-text">
+                Testing across eight standardized 100 mL samples ($S_0$ through $S_7$) produced key environmental insights:
+            </p>
+
+            <div class="summary-box">
+                <h3>Key Testing Conclusions</h3>
+                <ul>
+                    <li><strong>Highest Contamination ($S_5$):</strong> Collected from the Rungan River near active illegal gold mining zones, exhibiting the maximum recorded mercury concentration.</li>
+                    <li><strong>Lowest River Sample ($S_2$):</strong> Collected from urban sections of the Kahayan River with high residential activity but distant from active PETI mining sites.</li>
+                    <li><strong>Mitigation Recommendations:</strong> Local miners should transition from mercury amalgamation to eco-friendly alternatives such as cyanidation leaching, iGoli leaching, or gravity separation technology.</li>
+                </ul>
+            </div>
+
+            <hr style="margin: 30px 0; border: 0; border-top: 1px solid #d0d7de;">
+
+            <!-- Frequently Asked Questions Section -->
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <p class="justified-text"> Here are some questions asked about our device. (<strong>It's in Indonesian. Make sure you are familiar with the language!</strong>)</p>
+            <div class="faq-container" style="margin-top: 20px;">
+                <div class="rung-container">
+                    <div class="rung-header">Q1: Mengapa kalian dapat menyimpulkan bahwa yang menempel di batang katode adalah merkuri? </div>
+                    <div class="rung-body">
+                        <p class="rung-details">
+                            Kami masih belum bisa 100% menyimpulkan bahwa senyawa yang menempel adalah merkuri. Alat kami masih berupa prototype atau rancangan awal sehingga masih perlu dilakukan pengembangan dan penilitian lebih lanjut </p>
+                    </div>
+                </div>
+
+                <div class="rung-container">
+                    <div class="rung-header">Q2: Apa yang terjadi pada manusia jika terpapar merkuri?</div>
+                    <div class="rung-body">
+                        <p class="rung-details">
+                            Penelitian oleh Stephan Bose pada tahun 2007 s/d 2016, pada responden menunjukkan gejala 
+
+spesifik keracunan seperti movement disorder dan gangguan pada saraf. 
+
+Selain itu, menyebabkan penyakit minamata atau kelainan pada system saraf pusat karena ikan yang terkontaminasi merkuri dan menyebabkan mulai dari kejangkejang, kelumpuhan hingga kematian. Ada pula kerusakan paru-paru, pencernaan, ginjal, kulit, kanker, gangguan pada janin dan bayi, dengan gejala awal kesemutan pada kaki dan tangan, lemas, penyempitan sudut pandang, penurunan kemampuan berbicara dan pendengaran, serta tremor dan kelumpuhan. </p>
+                    </div>
+                </div>
+
+                <div class="rung-container">
+                    <div class="rung-header">Q3: Bagaimana cara menghilangkan merkuri pada air? </div>
+                    <div class="rung-body">
+                        <p class="rung-details">
+                           Menurut salah satu penelitian yang dilakukan oleh Hidayati pada tahun 2004 bahwa Usaha pengolahan tersebut menggunakan agen biologi yakni Remediasi yang menggunakan tumbuhan  atau disebut Teknologi Fitoremediasi. Fitoremediasi didefinisikan sebagai pencucian polutan yang dimediasi oleh  tumbuhan, termasuk pohon, rumputrumputan, dan tanaman air. Yang salah satu penerapannya Memanfaatkan pasir zeolite atau dengan melati air [Echinodorus Paleafolius]. Yang dimana pasir zeolite akan menyaring partikel partikel besar pada air dan melati air akan mencuci polutan pada air sungai. </p>
+                    </div>
+                </div>
+
+                <div class="rung-container">
+                    <div class="rung-header">Q4: Apa kelebihan dan kekurangan dari alat kita? </div>
+                    <div class="rung-body">
+                        <p class="rung-details">
+                            <strong>Kelebihan:</strong>
+                            <ul>
+            <li>Ekonomis</li>
+            <li>Portabel</li>
+            <li>Praktis</li>
+        </ul>
+    
+         <strong>Kekurangan:</strong>
+                            <ul>
+            <li>Masih harus divalidasikan dengan hasil uji coba lab.</li>
+            <li>Masih berupa prototipe pertama. </li>
+            <li>Masih harus dikembangkan lebih lanjut oleh para ahli</li>
+             <li>Masih bergantung pada elektrolisis yang memakan waktu.</li>
+        </ul>
+    
+    </p>
+                    </div>
+                </div>
+
+                   <div class="rung-container">
+                    <div class="rung-header">Q5: Kenapa kita bisa mengangkat topik tersebut? </div>
+                    <div class="rung-body">
+                        <p class="rung-details">
+                        Karena kami menyadari bahwa banyaknya penambangan emas ilegal yang beredar di Kalteng, yang kami sadari juga bahwa penambangan emas ilegal pastinya tidak mengolah limbah hasil pembuangan dengan benar sehingga kami ingin menyadarkan masyarakat tentang bahaya merkuri yang terkandung dalam sungai dan kami berharap pemerintah dapat lebih serius dalam menangani hal ini.    
+                        
+                        </div>
+                </div>
+
+            </div>  
+            
+            <div style="margin-top: 40px; text-align: center;">
+                <a href="../../projects/" class="btn" style="display: inline-block;">← Back to Projects</a>
+            </div>
+       
+   
+    </article>
+
+    
+
+
+    <footer>
+        <p>&copy; 2026 Nigel Nayar.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,304 @@
+/* ==========================================================================
+   EARLY INTERNET / WEB 1.0 RETRO STYLESHEET (extras/aero-style.css)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --win-gray: #c0c0c0;
+    --win-dark-gray: #808080;
+    --win-light-gray: #ffffff;
+    --win-blue: #000080;
+    --win-text: #000000;
+    --flash-teal: #008080;
+}
+
+body.retro-body {
+    margin: 0;
+    padding: 20px 10px;
+    background-color: #008080; /* Classic Windows 95 Teal Background */
+    color: var(--win-text);
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.retro-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Classic Windows Bevel Box */
+.retro-window, .retro-box {
+    background-color: var(--win-gray);
+    border-top: 2px solid var(--win-light-gray);
+    border-left: 2px solid var(--win-light-gray);
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    box-shadow: 1px 1px 0px #000000;
+    margin-bottom: 20px;
+    padding: 2px;
+}
+
+/* Windows 95/98 Titlebar */
+.window-titlebar {
+    background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+    color: #ffffff;
+    padding: 3px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 3px;
+}
+
+/* Blocky Windows Buttons */
+.win98-btn {
+    background-color: var(--win-gray);
+    border-top: 2px solid var(--win-light-gray);
+    border-left: 2px solid var(--win-light-gray);
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    font-family: sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 1px 6px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000000;
+}
+
+.win98-btn:active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid var(--win-light-gray);
+    border-bottom: 2px solid var(--win-light-gray);
+}
+
+.x-btn {
+    background-color: #c0c0c0;
+}
+
+/* Hero Section */
+.retro-hero {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px inset #808080;
+    margin: 4px;
+}
+
+.welcome-text h1 {
+    margin: 0 0 6px 0;
+    font-size: 22px;
+    color: #000080;
+    text-align: center;
+}
+
+.tagline {
+    text-align: center;
+    margin: 0 0 15px 0;
+    font-weight: bold;
+}
+
+.marquee-box {
+    background-color: #000000;
+    color: #00ff00;
+    font-family: monospace;
+    padding: 4px;
+    border: 2px inset #808080;
+}
+
+/* Grid Layout */
+.retro-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+}
+
+.box-title {
+    background-color: #000080;
+    color: #ffffff;
+    padding: 3px 8px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.box-content {
+    padding: 12px;
+    background-color: #ffffff;
+    border: 2px inset #808080;
+    margin: 2px;
+}
+
+/* Retro Table */
+.retro-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.retro-table td {
+    padding: 8px;
+    vertical-align: top;
+    border-bottom: 1px dashed #808080;
+}
+
+.icon-td {
+    font-size: 22px;
+    width: 35px;
+}
+
+.retro-table p {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+}
+
+/* Flash Player Widget */
+.flash-header {
+    background-color: #ff6600 !important; /* Macromedia Flash Orange */
+}
+
+.flash-body {
+    padding: 10px;
+    background-color: #333333;
+    border: 2px inset #808080;
+    margin: 2px;
+    text-align: center;
+}
+
+.flash-screen {
+    background-color: #000000;
+    border: 1px solid #00ff00;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 6px;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.equalizer-bar {
+    width: 12px;
+    background-color: #00ff00;
+}
+
+.bar1 { height: 60%; }
+.bar2 { height: 90%; }
+.bar3 { height: 40%; }
+.bar4 { height: 75%; }
+
+.flash-status {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    margin: 0;
+    color: #00ff00;
+    font-size: 10px;
+    font-family: monospace;
+}
+
+.block-controls {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.block-btn {
+    font-size: 11px;
+    padding: 4px 10px;
+}
+
+/* System Info List */
+.retro-list {
+    list-style-type: square;
+    padding-left: 24px;
+    margin: 8px;
+    background-color: #ffffff;
+    border: 2px inset #808080;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.retro-list li {
+    margin-bottom: 4px;
+}
+
+/* Hit Counter & Badges */
+.hit-counter {
+    display: inline-flex;
+    gap: 2px;
+    background-color: #000000;
+    padding: 4px;
+    border: 2px inset #808080;
+    margin-top: 10px;
+}
+
+.digit {
+    background-color: #222222;
+    color: #ff0000;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 2px 6px;
+    border: 1px solid #444444;
+}
+
+.counter-text {
+    font-size: 11px;
+    margin: 6px 0 12px 0;
+    font-weight: bold;
+}
+
+.retro-buttons-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.retro-badge {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border: 1px outset #ffffff;
+    font-family: sans-serif;
+}
+
+.retro-badge.cyan {
+    background-color: #00ffff;
+    color: #000000;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Footer */
+.retro-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.footer-btn {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 16px;
+}
+
+@media (max-width: 768px) {
+    .retro-grid {
+        grid-template-columns: 1fr;
+    }
+}

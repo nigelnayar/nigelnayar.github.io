@@ -1,0 +1,26 @@
+<!doctype Html>
+<html>
+<head>
+	<title>Simple Computer Asistant</title>
+		
+</head>
+<body>
+	
+		<label>My Name Is</label><br>
+	<input type= "text" id= "Itname" name= "Itname" required><br>
+	<label>Your Name Is</label><br>
+	<input type= "text" id= "Urname" name= "Urname" required><br>
+	<button onclick= 'hello()'>Ok</button>
+	
+	<p id= "hello"></p>
+<script>
+
+	function hello() {
+		var Itname = document.getElementById("Itname").value;
+		var Urname = document.getElementById("Urname").value;
+		document.getElementById("hello").innerHTML = "Hello" + "" + Urname + "!" + "I'm" + Itname + "!";
+});
+	}
+</script>
+</body>
+</html>

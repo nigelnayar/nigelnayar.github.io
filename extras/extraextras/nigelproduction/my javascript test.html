@@ -1,0 +1,38 @@
+<!doctype HTML>
+	<html>
+		<head>
+			<script type= "text/javascript">
+				function calc() {
+					var num1 = parseFloat(document.getElementById("num1").value);
+					var num2 = parseFloat(document.getElementById("num2").value);
+					
+					var oper = document.getElementById("oper").value;
+					
+					if ( oper === "+") {
+						document.getElementById("result").innerHTML = num1 + num2;
+					}
+					if ( oper === "-") {
+						document.getElementById("result").innerHTML = num1 - num2;
+					}
+					if ( oper === "*") {
+						document.getElementById("result").innerHTML = num1 * num2;
+					}
+					if ( oper === "/") {
+						document.getElementById("result").innerHTML = num1 / num2;
+					}
+				}
+			</script>
+		</head>
+		<body>
+			<input type= "text" id= "num1">
+				<select id="oper">
+					<option value= "+">+</option>
+					<option value= "-">-</option>
+					<option value= "*">*</option>
+					<option value= "/">/</option>
+				</select>
+			<input type= "text" id= "num2"><br>
+			<button onclick= 'calc()'>=</button>
+			<p id= "result"></p>
+		</body>
+	</html>

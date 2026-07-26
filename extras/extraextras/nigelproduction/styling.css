@@ -1,0 +1,85 @@
+
+	body {background-image: url('bg.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: Impact;}
+	h1{ color: white; font-family: Comic Sans MS;}
+	p {color: white; font-family: MV Boli; font-size: 20px;}
+	label {color: white; font-family: MV Boli; font-size: 20px;}
+	div{ color: blue; }
+	a {text-decoration: none; color: white;}
+	.important {color: blue; text-decoration: underline;}
+	h5 {color: white;}
+			.alreadyOpened {color: grey; padding-left: 5px; border-style: solid; width: 16%; height: 30px;
+					border-radius: 50px 20px; }
+					.linker { border-style: solid; width: 16%; height: 30px;
+					border-radius: 50px 20px; display:inline-block;}
+			.solid {  padding-left: 5px; border-style: solid; width: 7%; height: 30px;
+					border-radius: 50px 20px;}
+					a:hover {
+  font-size: 105%;
+}
+			.searchbar {
+				padding-left: 1px;
+				font-family: Comic Sans MS;
+			}
+			.bar {
+				background-color: rgba(40, 90, 130, 0) ;
+				border: solid;
+				border-color: white;
+				width: 36%;
+				border-radius: 30px 20px;
+				color:white;
+				outline:none;
+				font-family: Comic Sans MS;
+
+				padding-bottom: 5px;
+			}
+			.searchbutton {
+				width: 20px;
+				height: 20px;
+				padding-top: 20px;
+				padding-left: 13px;
+				outline: none;
+			}
+			.searchbutton:hover {
+				opacity: 0.5;
+			}
+			.log {
+				background-color: rgba(40, 90, 130, 0) ;
+				border: solid;
+				border-color: white;
+				width: 13%;
+				border-radius: 30px 20px;
+				color:white;
+				outline:none;
+				font-family: Comic Sans MS;
+			}
+			.submit {
+				background-color: rgba(40, 90, 130, 0) ;
+				border: solid;
+				border-color: white;
+				width: 6%;
+				border-radius: 50px 20px;
+				color:white;
+				outline:none;
+				font-family: Comic Sans MS;
+				cursor: pointer;
+			}
+			textarea {
+ background-color: rgba(40, 90, 130, 0) ;
+  resize: none;
+  border-radius: 30px 30px;
+  border: solid ;
+  padding: 0.5rem;
+  color: white;
+
+  overflow: auto;
+    outline: none;
+
+
+    border: 1px solid darken(#ddd, 5%);
+
+
+  }

@@ -1,0 +1,273 @@
+/* ==========================================================================
+   EXTRAS PAGE - DARK CYBER/NEON THEME
+   ========================================================================== */
+
+:root {
+    --bg-dark: #0d1117;
+    --card-bg: #161b22;
+    --card-border: #30363d;
+    --text-main: #e6edf3;
+    --text-muted: #8b949e;
+    --neon-blue: #38bdf8;
+    --neon-amber: #f59e0b;
+    --neon-emerald: #10b981;
+    --neon-purple: #a855f7;
+}
+
+body.extras-body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Consolas', 'Fira Code', 'Monaco', monospace, -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+.extras-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Nav */
+.extras-nav {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--card-border);
+    background: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-link {
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #00e5ff;
+    text-decoration: underline;
+}
+
+.page-tag {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+}
+
+/* Hero */
+.extras-hero {
+    padding: 80px 0 40px 0;
+    border-bottom: 1px dashed var(--card-border);
+}
+
+.glitch-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    margin-bottom: 12px;
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 650px;
+}
+
+/* Blocks & Headers */
+.extras-block {
+    padding: 50px 0;
+    border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.accent-num {
+    color: var(--neon-blue);
+    font-size: 1.1rem;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+/* Grid Cards */
+/* Vertical Stack Layout for Extras Cards */
+.extras-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.extras-card {
+    width: 100%;             /* Ensures each card spans full container width */
+    box-sizing: border-box;
+}
+
+.extras-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.extras-card:hover {
+    transform: translateY(-5px);
+}
+
+.extras-card.neon-blue:hover { border-color: var(--neon-blue); box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
+.extras-card.neon-amber:hover { border-color: var(--neon-amber); box-shadow: 0 0 15px rgba(245, 158, 11, 0.2); }
+.extras-card.neon-emerald:hover { border-color: var(--neon-emerald); box-shadow: 0 0 15px rgba(16, 185, 129, 0.2); }
+
+.card-tag {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.extras-card h3 {
+    margin: 0 0 12px 0;
+    color: #ffffff;
+    font-size: 1.15rem;
+}
+
+.extras-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Stacked Glow Boxes */
+.custom-card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.glow-box {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-left: 4px solid var(--neon-purple);
+    border-radius: 6px;
+    padding: 20px 24px;
+}
+
+.box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.box-header h3 {
+    margin: 0;
+    color: #ffffff;
+}
+
+.status-pill {
+    background: rgba(168, 85, 247, 0.15);
+    color: var(--neon-purple);
+    border: 1px solid var(--neon-purple);
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+}
+
+.glow-box p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+/* Spec Grid */
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.spec-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.spec-label {
+    font-size: 0.75rem;
+    color: var(--neon-blue);
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.spec-value {
+    font-size: 0.88rem;
+    color: var(--text-main);
+}
+
+/* Footer */
+.extras-footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+/* Adjusted Absolute Logo Position */
+.corner-logo-link {
+    position: absolute;
+    top: 8px;                /* Shifted up slightly */
+    left: 24px;
+    width: 100px;            /* Adjusted to fit within nav boundaries */
+    height: 50px;
+    display: block;
+    z-index: 1000;
+    text-decoration: none;
+    background: transparent !important;
+    border: none !important;
+}
+
+.corner-logo-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    border: none !important;
+}
+
+/* Adjust Nav flex to push text clear of the logo */
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 110px;     /* Prevents nav tags from colliding with logo */
+}
