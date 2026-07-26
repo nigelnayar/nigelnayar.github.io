@@ -336,12 +336,13 @@ footer {
     border-color: #54aeff;
 }
 
-/* Local Skill Icon Styling */
+
+/* Fix for technical skill icons */
 .skill-icon {
     width: 36px;
     height: 36px;
     object-fit: contain;
-    margin-bottom: 8px;
+    margin-bottom: 0; /* Align neatly with adjacent text inside flexbox */
 }
 
 /* Certificate Header & Badges */
