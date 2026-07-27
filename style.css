@@ -1,18 +1,31 @@
 :root {
-    --primary: #24292e; /* GitHub Dark Grey */
-    --accent: #0969da;  /* GitHub Blue */
-    --bg: #f6f8fa;
-    --text: #1f2328;
+    /* Terracotta & Warm Orange Palette */
+    --primary: #c25928;           /* Rich Burnt Orange for headings & accents */
+    --primary-hover: #a3441a;     /* Deeper Terracotta for hover states */
+    --accent: #e07a5f;            /* Soft Coral Orange */
+    --accent-light: #fdf6f0;      /* Warm Peach Tint for hero section & backgrounds */
+    
+    /* Backgrounds & Neutral Warmth */
+    --bg-main: #faf6f0;           /* Soft Sand Off-White */
+    --card-bg: #ffffff;           /* Clean White */
+    --border-color: #f0dccb;      /* Subtle Warm Peach Border */
+    
+    /* Text Colors */
+    --text-primary: #2d2019;      /* Dark Charcoal with warm undertone */
+    --text-muted: #7d6b5d;        /* Warm Muted Gray */
+    
+    /* Buttons */
+    --btn-primary-bg: #c25928;    /* Burnt Orange Primary Button */
+    --btn-primary-text: #ffffff;
 }
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    line-height: 1.6;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
-    color: var(--text);
-    background-color: #ffffff;
+    padding: 0;
+    line-height: 1.6;
 }
-
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -52,6 +65,11 @@ header {
     text-align: center;
     border-bottom: 1px solid #d0d7de;
 }
+/* Hero Header Background */
+header#about {
+    background: var(--accent-light);
+    border-bottom: 1px solid var(--border-color);
+}
 
 header h1 {
     font-size: 3rem;
@@ -85,12 +103,20 @@ header h1 {
     align-items: center;
     gap: 8px;
     background: var(--accent);
-    color: white;
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
     padding: 10px 18px;
+    border: 1px solid var(--btn-primary-bg);
     border-radius: 6px;
     text-decoration: none;
     margin-top: 20px;
     font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
 }
 
 /* Project Grid */
@@ -105,15 +131,17 @@ header h1 {
 }
 
 .card {
+    background: var(--card-bg);
     padding: 20px;
-    border: 1px solid #d0d7de;
+    border: 1px solid var(--border-color);
     border-radius: 6px;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent);
+    border-color: var(--primary);
+    box-shadow: 0 8px 24px rgba(140, 149, 159, 0.2);
 }
 
 footer {
@@ -375,3 +403,113 @@ footer {
 }
 
 
+/* Hero Container Alignment */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Profile Text Alignment */
+.profile-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left; /* Aligns title, paragraphs, and buttons cleanly */
+}
+
+.profile-text h1 {
+    margin: 12px 0 8px 0;
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.hero-subdesc {
+    color: #656d76;
+    margin-bottom: 20px;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid #16644a;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #031f15;
+    font-family: monospace;
+}
+
+.pill-dot {
+    height: 8px;
+    width: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Fixed Image Crop & Sizing */
+.profile-pic {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    object-position: center 54%; /* Focuses higher up on face and beanie */
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    display: block;
+}
+
+/* Social Button Alignment */
+.social-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Responsive Centering on Mobile */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-text {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .profile-pic {
+        width: 170px;
+        height: 170px;
+    }
+}
+/* Responsive adjustment for small screens */
+@media (max-width: 640px) {
+    #about .container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .profile-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+}

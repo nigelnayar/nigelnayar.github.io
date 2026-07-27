@@ -21,60 +21,117 @@
         </div>
     </nav>
 
-    <header id="about">
-    <div class="container">
-        <h1>Hi, I'm Nigel Denaya Manuwu Nayar.</h1>
-        <p>A passionate electrical engineer and self-taught software engineer.</p>
-        <p>I am currently an Electrical Engineering student at Fakultas Teknik Universitas Indonesia.</p>
+    <header id="about" style="padding: 60px 0;">
+    <div class="container hero-container">
         
-        <div class="social-links">
-            <a href="https://github.com/nigelnayar" class="btn gh-btn" target="_blank" rel="noopener">
-                <img src="assets/icons/github.svg" alt="GitHub" class="icon icon-sm"> GitHub
-            </a>
-            <a href="https://linkedin.com/in/nigelnayaro" class="btn li-btn" target="_blank" rel="noopener">
-                <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="icon icon-sm"> LinkedIn
-            </a>    
-            <a href="https://www.instagram.com/nigelthenerd" class="btn ig-btn" target="_blank" rel="noopener">
-                <img src="assets/icons/instagram.svg" alt="Instagram" class="icon icon-sm"> Instagram
-            </a>
+        <!-- Profile Picture Column -->
+        <div class="profile-image-container">
+            <img src="assets/images/profile.jpeg" alt="Nigel Denaya Manuwu Nayar" class="profile-pic">
         </div>
+
+        <!-- Intro Text Column -->
+        <div class="profile-text">
+            <!-- Live Status Pill -->
+            <div class="status-pill">
+                <span class="pill-dot"></span>
+                Available for Hardware & Embedded Systems Roles
+            </div>
+            
+            <h1>Hi, I'm Nigel Denaya Manuwu Nayar.</h1>
+            <p class="hero-desc">A passionate electrical engineer and self-taught software engineer.</p>
+            <p class="hero-subdesc">I am currently an Electrical Engineering student at Fakultas Teknik Universitas Indonesia.</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/nigelnayar" class="btn gh-btn" target="_blank" rel="noopener">
+                    <img src="assets/icons/github.svg" alt="GitHub" class="icon icon-sm"> GitHub
+                </a>
+                <a href="https://linkedin.com/in/nigelnayaro" class="btn li-btn" target="_blank" rel="noopener">
+                    <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="icon icon-sm"> LinkedIn
+                </a>    
+                <a href="https://www.instagram.com/nigelthenerd" class="btn ig-btn" target="_blank" rel="noopener">
+                    <img src="assets/icons/instagram.svg" alt="Instagram" class="icon icon-sm"> Instagram
+                </a>
+            </div>
+        </div>
+
     </div>
 </header>
 
     <section id="projects" class="container">
-        <h2>Recent Projects</h2>
+        <h2>Featured Projects</h2>
         <div class="grid">
-            <div class="card">
-                <h3>Web Integrated IOT Based Automatic Pill Dispenser</h3>
-                <p>I developed a simple IOT based  Automatic Pill Dispenser that is integrated to the web using ESP32 and google firebase service.</p>
-                <a href="projects/Web_Integrated_IOT_Based_Automatic_Pill_Dispenser/">View Details →</a>
-            </div>
-            <div class="card">
-                <h3>Smart Vertical Buffer System</h3>
-                <p>A smart elevator Automation simulation that is designed to distribute pallets efficiently through an input track to available storage level.</p>
-                <a href="projects/smartverticalbuffersystem/">View Details →</a>
-            </div>
-            <div class="card">
-                <h3>CMOS Two-Stage Fully Differential Amplifier</h3>
-                <p>A stable CMOS Two-Stage Fully Differential Amplifier designed and simulated in Xschem with IHPSG13G2 PDK technology, achieving high open loop gain and CMRR.</p>
-                <a href="projects/twostageamp/">View Details →</a>
-            </div>
-            <div class="card">
-                <h3>USB C R-2R Ladder 16-Bit Digital to Analog Converter(DAC) </h3>
-                <p>My partner and I recently developed a Digital to Analog converter by integrating the Ladder Network Conversion architecture.</p>
-                <a href="projects/USB_C_R-2R_Ladder_16-Bit_Digital-to-Analog_Converter/">View Details →</a>
-            </div>
-            <div class="card">
-                <h3>Class B Audio Amplifier</h3>
-                <p>A class B analog audio amplifier that is more efficient than other amplifier classes.</p>
-                <a href="#">View Details →</a>
-            </div>
-            <div class="card">
-                <h3>IoT Mercury Water Measuring Device (NAMHED)</h3>
-                <p>Arduino-based water quality analyzer built for the Ki Hajar STEM competition 2022.</p>
-                <a href="projects/iotmercurydetector/">View Details →</a>
-            </div>
             
+            <!-- Project 1: Pill Dispenser -->
+            <div class="card">
+                <span style="font-size: 0.75rem; font-family: monospace; color: #0969da; text-transform: uppercase; letter-spacing: 1px;">Embedded Systems Final Project</span>
+                <h3 style="margin: 8px 0;"><a href="projects/Web_Integrated_IOT_Based_Automatic_Pill_Dispenser/" style="color: #0969da; text-decoration: none;">Web Integrated IoT Automatic Pill Dispenser</a></h3>
+                <p style="color: #57609a; font-size: 0.95rem; margin-bottom: 16px;">Developed a smart IoT-based automatic pill dispenser integrated with a web dashboard using ESP32 microcontrollers and Google Firebase cloud service.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">ESP32</span>
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">Firebase</span>
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">Internet of Things</span>
+                </div>
+            </div>
+
+            <!-- Project 2: Vertical Buffer -->
+            <div class="card">
+                <span style="font-size: 0.75rem; font-family: monospace; color: #0969da; text-transform: uppercase; letter-spacing: 1px;">Control Engineering Lab Practice</span>
+                <h3 style="margin: 8px 0;"><a href="projects/smartverticalbuffersystem/" style="color: #0969da; text-decoration: none;">Smart Vertical Buffer System</a></h3>
+                <p style="color: #57609a; font-size: 0.95rem; margin-bottom: 16px;">A smart elevator automation simulation designed to efficiently distribute pallets through an input track to available storage levels using array processing.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">PLC Logic</span>
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">Automation</span>
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">Sensors</span>
+                </div>
+            </div>
+
+            <!-- Project 3: CMOS Amplifier -->
+            <div class="card">
+                <span style="font-size: 0.75rem; font-family: monospace; color: #0969da; text-transform: uppercase; letter-spacing: 1px;">Microelectronics Course Final Project</span>
+                <h3 style="margin: 8px 0;"><a href="projects/twostageamp/" style="color: #0969da; text-decoration: none;">CMOS Two-Stage Fully Differential Amp</a></h3>
+                <p style="color: #57609a; font-size: 0.95rem; margin-bottom: 16px;">Designed and simulated a stable CMOS differential amplifier using Xschem and IHPSG13G2 PDK technology to achieve high open-loop gain and CMRR.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">Xschem</span>
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">SPICE</span>
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">Analog Circuit</span>
+                </div>
+            </div>
+
+            <!-- Project 4: Search & Rescue Robot -->
+            <div class="card">
+                <span style="font-size: 0.75rem; font-family: monospace; color: #0969da; text-transform: uppercase; letter-spacing: 1px;">Robotics & Hardware Design</span>
+                <h3 style="margin: 8px 0;"><a href="projects/" style="color: #0969da; text-decoration: none;">KRSRI Search & Rescue Robot</a></h3>
+                <p style="color: #57609a; font-size: 0.95rem; margin-bottom: 16px;">Multi-layer PCB architecture, sensor signal conditioning, and power delivery integration for Reignblaze TRUI autonomous robotics.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">EasyEDA</span>
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">Robotics</span>
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">PCB Layout</span>
+                </div>
+            </div>
+
+            <!-- Project 5: Class B Audio Amplifier -->
+            <div class="card">
+                <span style="font-size: 0.75rem; font-family: monospace; color: #0969da; text-transform: uppercase; letter-spacing: 1px;">Analog Electronics</span>
+                <h3 style="margin: 8px 0;"><a href="#" style="color: #0969da; text-decoration: none;">Class B Audio Amplifier</a></h3>
+                <p style="color: #57609a; font-size: 0.95rem; margin-bottom: 16px;">Designed and prototyped a push-pull Class B analog audio power amplifier focusing on power efficiency and minimal cross-over distortion.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">Analog Circuit</span>
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">Power Electronics</span>
+                </div>
+            </div>
+
+            <!-- Project 6: NAMHED Mercury Detector -->
+            <div class="card">
+                <span style="font-size: 0.75rem; font-family: monospace; color: #0969da; text-transform: uppercase; letter-spacing: 1px;">Ki Hajar STEM 2022</span>
+                <h3 style="margin: 8px 0;"><a href="projects/iotmercurydetector/" style="color: #0969da; text-decoration: none;">IoT Mercury Water Measurement Device (NAMHED)</a></h3>
+                <p style="color: #57609a; font-size: 0.95rem; margin-bottom: 16px;">Arduino-based water quality analyzer measuring micro-gram electrolysis shifts for illegal mining water contamination testing (KiHajar STEM Finalist).</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">Arduino</span>
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">HX711 ADC</span>
+                    <span class="tag" style="background: #f3f4f6; border: 1px solid #e5e7eb; font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; font-family: monospace;">C++</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
