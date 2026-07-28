@@ -8,64 +8,120 @@
     <link rel="shortcut icon" type="image/png" href="../favicon.png">
 </head>
 <body>
+    <!-- Navbar with corrected relative paths -->
     <nav class="navbar">
         <div class="container nav-flex">
-            <a href="../../" class="nav-brand">Nigel Nayar</a>
+            <a href="../index.html" class="nav-brand">Nigel Nayar</a>
             <div class="nav-links">
-                <a href="about/index.html">About</a>
-                <a href="projects/index.html">Projects</a>
-                
+                <a href="../about/index.html">About</a>
+                <a href="index.html">Projects</a>
                 <a href="mailto:nigelnayar0@gmail.com" class="nav-contact-btn">Contact</a>
             </div>
         </div>
     </nav>
 
-    <main class="container">
-        <h1>My Engineering Projects</h1>
-        <p class="justified-text">
-            Below is a collection of my technical projects, ranging from IoT-based healthcare solutions 
-            to hardware-level digital electronics. Each project represents a deep dive into 
-            microcontroller integration, circuit design, and system automation.
+    <main class="container" style="padding: 40px 0 60px 0;">
+        <h1 style="color: var(--primary); margin-bottom: 8px;">My Engineering Projects</h1>
+        <p class="justified-text" style="color: var(--text-muted); max-width: 800px; margin-bottom: 32px;">
+            Below is a comprehensive collection of my technical projects, spanning analog microelectronics design, 
+            embedded IoT systems, robotics PCB layouts, and industrial automation. Click on any project card to view the complete documentation, circuit schematics, and technical reports.
         </p>
 
         <section class="grid">
-            <!-- Project 1 -->
+            <!-- Project 1: Pill Dispenser -->
             <div class="card">
-                <h3>Web Integrated IOT Based Automatic Pill Dispenser</h3>
-                <p>An ESP32 and Firebase-powered medication assistant developed for a college assignment.</p>
-                <a href="Web_Integrated_IOT_Based_Automatic_Pill_Dispenser/">View Details →</a>
+                <span style="font-size: 0.75rem; font-family: monospace; color: var(--primary); text-transform: uppercase; letter-spacing: 1px;">Embedded Systems Final Project</span>
+                <h3 style="margin: 8px 0;">Web Integrated IoT Automatic Pill Dispenser</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">An ESP32 and Firebase-powered medication assistant developed for a college capstone project, integrated with a real-time scheduling web application.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;">
+                    <span class="tag">ESP32</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">Internet of Things</span>
+                </div>
+                <a href="Web_Integrated_IOT_Based_Automatic_Pill_Dispenser/" style="color: var(--primary); font-weight: 600; text-decoration: none;">View Details →</a>
             </div>
 
-            <!-- Project 2 -->
+            <!-- Project 2: Vertical Buffer System -->
             <div class="card">
-                <h3>Smart Vertical Buffer System</h3>
-                <p>A smart elevator Automation simulation that is designed to distribute pallets efficiently through an input track to available storage level.</p>
-                <a href="smartverticalbuffersystem/">View Details →</a>
+                <span style="font-size: 0.75rem; font-family: monospace; color: var(--primary); text-transform: uppercase; letter-spacing: 1px;">Control Engineering Lab Practice</span>
+                <h3 style="margin: 8px 0;">Smart Vertical Buffer System</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">A smart elevator automation simulation designed to efficiently distribute pallets through an input track to available storage levels using array data processing.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;">
+                    <span class="tag">PLC Logic</span>
+                    <span class="tag">Automation</span>
+                    <span class="tag">Sensors</span>
+                </div>
+                <a href="smartverticalbuffersystem/" style="color: var(--primary); font-weight: 600; text-decoration: none;">View Details →</a>
             </div>
 
+            <!-- Project 3: CMOS Differential Amp -->
             <div class="card">
-                <h3>CMOS Two-Stage Fully Differential Amplifier</h3>
-                <p>A stable CMOS Two-Stage Fully Differential Amplifier designed and simulated in Xschem with IHPSG13G2 PDK technology, achieving high open loop gain and CMRR.</p>
-                <a href="twostageamp/">View Details →</a>
+                <span style="font-size: 0.75rem; font-family: monospace; color: var(--primary); text-transform: uppercase; letter-spacing: 1px;">Microelectronics Course Final Project</span>
+                <h3 style="margin: 8px 0;">CMOS Two-Stage Fully Differential Amplifier</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">A stable CMOS Two-Stage Fully Differential Amplifier designed and simulated in Xschem with IHPSG13G2 PDK technology, achieving high open-loop gain and CMRR.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;">
+                    <span class="tag">Xschem</span>
+                    <span class="tag">SPICE</span>
+                    <span class="tag">Analog Circuit</span>
+                </div>
+                <a href="twostageamp/" style="color: var(--primary); font-weight: 600; text-decoration: none;">View Details →</a>
             </div>
 
+            <!-- Project 4: USB-C 16-Bit DAC -->
             <div class="card">
-                <h3>USB C R-2R Ladder 16-Bit DAC</h3>
-                <p>Digital to Analog converter project utilizing Ladder Network Conversion architecture.</p>
-                <a href="USB_C_R-2R_Ladder_16-Bit_Digital-to-Analog_Converter/">View Details →</a>
+                <span style="font-size: 0.75rem; font-family: monospace; color: var(--primary); text-transform: uppercase; letter-spacing: 1px;">Digital Hardware Design</span>
+                <h3 style="margin: 8px 0;">USB-C R-2R Ladder 16-Bit DAC</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">High-resolution Digital-to-Analog converter board utilizing a precise R-2R resistor ladder network architecture and USB-C power/data interface.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;">
+                    <span class="tag">R-2R Ladder</span>
+                    <span class="tag">PCB Design</span>
+                    <span class="tag">DAC</span>
+                </div>
+                <a href="USB_C_R-2R_Ladder_16-Bit_Digital-to-Analog_Converter/" style="color: var(--primary); font-weight: 600; text-decoration: none;">View Details →</a>
             </div>
 
-            <!-- Project 3 -->
+            <!-- Project 5: KRSRI Search & Rescue Robot -->
             <div class="card">
-                <h3>Class B Audio Amplifier</h3>
-                <p>An efficient analog audio amplifier circuit designed for high-fidelity performance.</p>
-                <a href="#">View Details →</a>
+                <span style="font-size: 0.75rem; font-family: monospace; color: var(--primary); text-transform: uppercase; letter-spacing: 1px;">Robotics & Hardware Design</span>
+                <h3 style="margin: 8px 0;">KRSRI Search & Rescue Robot</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">Multi-layer PCB architecture, sensor signal conditioning, and power delivery integration for Reignblaze TRUI autonomous robotics team.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;">
+                    <span class="tag">EasyEDA</span>
+                    <span class="tag">Robotics</span>
+                    <span class="tag">PCB Layout</span>
+                </div>
+                <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none;">View Details →</a>
+            </div>
+
+            <!-- Project 6: NAMHED Mercury Water Measurement Device -->
+            <div class="card">
+                <span style="font-size: 0.75rem; font-family: monospace; color: var(--primary); text-transform: uppercase; letter-spacing: 1px;">Ki Hajar STEM 2022 Finalist</span>
+                <h3 style="margin: 8px 0;">IoT Mercury Water Measurement Device (NAMHED)</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">Arduino-based water quality analyzer measuring micro-gram electrolysis shifts for testing illegal mining river contamination in Central Kalimantan.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;">
+                    <span class="tag">Arduino</span>
+                    <span class="tag">HX711 ADC</span>
+                    <span class="tag">C++</span>
+                </div>
+                <a href="iotmercurydetector/" style="color: var(--primary); font-weight: 600; text-decoration: none;">View Details →</a>
+            </div>
+
+            <!-- Project 7: Class B Audio Amplifier -->
+            <div class="card">
+                <span style="font-size: 0.75rem; font-family: monospace; color: var(--primary); text-transform: uppercase; letter-spacing: 1px;">Analog Electronics</span>
+                <h3 style="margin: 8px 0;">Class B Audio Power Amplifier</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px;">An efficient push-pull analog audio power amplifier circuit designed for minimal cross-over distortion and high-fidelity output performance.</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px;">
+                    <span class="tag">Analog Circuit</span>
+                    <span class="tag">Power Electronics</span>
+                </div>
+                <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none;">View Details →</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Nigel Nayar.</p>
+        <p>&copy; 2026 Nigel Denaya Manuwu Nayar. All rights reserved.</p>
     </footer>
 </body>
 </html>
