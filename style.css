@@ -1,73 +1,121 @@
 :root {
-    /* Terracotta & Warm Orange Palette */
-    --primary: #c25928;           /* Rich Burnt Orange for headings & accents */
-    --primary-hover: #a3441a;     /* Deeper Terracotta for hover states */
-    --accent: #e07a5f;            /* Soft Coral Orange */
-    --accent-light: #fdf6f0;      /* Warm Peach Tint for hero section & backgrounds */
-    
+    /* Burnt Orange Palette — shifted toward a more saturated,
+       San Andreas–accurate orange, still light & professional */
+    --primary: #1e293b;          /* Vivid Burnt Orange for headings & accents */
+    --primary-hover: #706e8bf5;     /* Deeper Burnt Orange for hover states */
+    --accent: #329cff;            /* Punchy Coral-Orange */
+    --accent-light: #ffffff;      /* Warm Peach Tint for hero section & backgrounds */
+    --accent-orange: #c25928; 
     /* Backgrounds & Neutral Warmth */
-    --bg-main: #faf6f0;           /* Soft Sand Off-White */
-    --card-bg: #ffffff;           /* Clean White */
-    --border-color: #f0dccb;      /* Subtle Warm Peach Border */
-    
+    --bg-main: #f8fafc;           /* Clean, off-white background */
+    --card-bg: #ffffff;           /* Crisp white cards */
+    --border-color: #e2e8f0; 
     /* Text Colors */
-    --text-primary: #2d2019;      /* Dark Charcoal with warm undertone */
-    --text-muted: #7d6b5d;        /* Warm Muted Gray */
-    
+    --text-primary: #2a1b10;      /* Dark Charcoal with warm undertone */
+    --text-muted: #64748b;         /* Warm Muted Gray */
+
     /* Buttons */
-    --btn-primary-bg: #c25928;    /* Burnt Orange Primary Button */
+    --btn-primary-bg: #1e293b;    /* Burnt Orange Primary Button */
     --btn-primary-text: #ffffff;
 }
 body {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
+   margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--primary);
     line-height: 1.6;
+    
+    /* Very faint engineering grid background */
+    background-image: 
+        radial-gradient(rgba(148, 163, 184, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
-/* Navigation */
-nav {
-    background: var(--primary);
-    color: white;
-    padding: 1rem 0;
+/* Navbar */
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-nav .container {
+.nav-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
+.nav-brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.nav-brand:hover{
+    color: var(--text-muted);
 }
 
-nav a {
-    color: white;
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-muted);
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
 }
+
+.nav-links a:hover {
+    color: var(--accent-orange);
+}
+
+.nav-contact-btn {
+    background: var(--primary);
+    color: #ffffff !important;
+    padding: 6px 14px;
+    border-radius: 6px;
+}
+
+.nav-contact-btn:hover {
+    transition: background 0.2s;
+    background: var(--text-muted);
+    color: #ffffff !important;
+}
+
 
 /* Hero Section */
 header {
-    background: var(--bg);
-    padding: 80px 0;
-    text-align: center;
-    border-bottom: 1px solid #d0d7de;
-}
-/* Hero Header Background */
-header#about {
     background: var(--accent-light);
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+/* Hero Header Background — blueprint / schematic grid, with a faint
+   circuit doodle (op-amp, resistor, IC) tucked in the corner */
+header#about {
+    background-color: var(--accent-light);
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='140' viewBox='0 0 260 140'%3E%3Cpath d='M20 40 L20 100 L80 70 Z' fill='none' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cline x1='0' y1='50' x2='20' y2='50' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cline x1='0' y1='90' x2='20' y2='90' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cline x1='80' y1='70' x2='110' y2='70' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cpolyline points='130,20 140,10 150,30 160,10 170,30 180,10 190,20' fill='none' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Crect x='200' y='60' width='50' height='60' rx='2' fill='none' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cline x1='200' y1='72' x2='190' y2='72' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cline x1='200' y1='84' x2='190' y2='84' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cline x1='200' y1='96' x2='190' y2='96' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cline x1='200' y1='108' x2='190' y2='108' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cline x1='250' y1='72' x2='260' y2='72' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cline x1='250' y1='84' x2='260' y2='84' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cline x1='250' y1='96' x2='260' y2='96' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3Cline x1='250' y1='108' x2='260' y2='108' stroke='rgba(12,89,232,0.14)' stroke-width='2'/%3E%3C/svg%3E"),
+        repeating-linear-gradient(0deg, rgba(12, 71, 232, 0.05) 0px, rgba(12, 115, 232, 0.05) 1px, transparent 1px, transparent 8px),
+        repeating-linear-gradient(90deg, rgba(12, 144, 232, 0.05) 0px, rgba(12, 82, 232, 0.05) 1px, transparent 1px, transparent 8px),
+        repeating-linear-gradient(0deg, rgba(12, 126, 232, 0.1) 0px, rgba(12, 89, 232, 0.1) 1px, transparent 1px, transparent 40px),
+        repeating-linear-gradient(90deg, rgba(12, 107, 232, 0.1) 0px, rgba(12, 115, 232, 0.1) 1px, transparent 1px, transparent 40px);
+    background-repeat: no-repeat, repeat, repeat, repeat, repeat;
+    background-position: bottom 10px right 20px, 0 0, 0 0, 0 0, 0 0;
+    background-size: 260px 140px, auto, auto, auto, auto;
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -119,6 +167,8 @@ header h1 {
     border-color: var(--primary-hover);
 }
 
+
+
 /* Project Grid */
 #projects {
     padding: 60px 0;
@@ -144,12 +194,13 @@ header h1 {
     box-shadow: 0 8px 24px rgba(140, 149, 159, 0.2);
 }
 
-footer {
-    text-align: center;
-    padding: 40px 0;
-    font-size: 0.9rem;
-    color: #656d76;
-}
+    footer {
+        text-align: center;
+        padding: 40px 0;
+        font-size: 0.9rem;
+        color: #656d76;
+    }
+
 
 .justified-text {
     text-align: justify;
@@ -331,7 +382,7 @@ footer {
     padding: 8px 14px;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--text);
+    color: var(--text-primary);
     transition: all 0.2s ease-in-out;
 }
 
@@ -346,7 +397,7 @@ footer {
     border-radius: 6px;
     padding: 6px 12px;
     font-size: 0.88rem;
-    color: var(--text);
+    color: var(--text-primary);
 }
 
 .skill-title {
@@ -408,7 +459,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 48px;
     flex-wrap: wrap;
 }
 
@@ -435,18 +486,20 @@ footer {
     margin-bottom: 20px;
 }
 
+/* Status Pill */
 .status-pill {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(16, 185, 129, 0.1);
-    border: 1px solid #16644a;
-    padding: 4px 12px;
+    background: #f1f5f9;
+    border: 1px solid #cbe1da;
+    padding: 4px 14px;
     border-radius: 20px;
     font-size: 0.85rem;
-    color: #031f15;
+    color: #335545;
     font-family: monospace;
 }
+
 
 .pill-dot {
     height: 8px;
@@ -458,8 +511,8 @@ footer {
 
 /* Fixed Image Crop & Sizing */
 .profile-pic {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     object-position: center 54%; /* Focuses higher up on face and beanie */
     border-radius: 50%;
@@ -491,8 +544,8 @@ footer {
     }
 
     .profile-pic {
-        width: 170px;
-        height: 170px;
+        width: 160px;
+        height: 160px;
     }
 }
 /* Responsive adjustment for small screens */

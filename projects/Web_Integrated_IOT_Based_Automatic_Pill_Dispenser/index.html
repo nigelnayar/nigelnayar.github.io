@@ -6,21 +6,32 @@
     <title>Mediciner IoT | Nigel Nayar</title>
     <!-- Links to your main stylesheet in the root folder -->
     <link rel="stylesheet" href="../../style.css">
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png">
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <span class="logo"><a href="../../index.html">Nigel Nayar</a></span>
-            <ul>
-                <li><a href="../../about/index.html">About</a></li>
-                <li><a href="../../projects/index.html">Projects</a></li>
-                <li><a href="mailto:nigelnayar0@gmail.com">Contact</a></li>
-            </ul>
+    <nav class="navbar">
+        <div class="container nav-flex">
+            <a href="../../" class="nav-brand">Nigel Nayar</a>
+            <div class="nav-links">
+                <a href="about/index.html">About</a>
+                <a href="projects/index.html">Projects</a>
+                <a href="extras/index.html">Extras</a>
+                <a href="mailto:nigelnayar0@gmail.com" class="nav-contact-btn">Contact</a>
+            </div>
         </div>
     </nav>
 
+    <header id="about">
+        <div class="container">
+            <h1>Web Integrated IOT Based Automatic Pill Dispenser (Mediciner)</h1>
+            <p>Embedded Systems Practicum Final Project</p>
+            <p class="subtitle">A smart IoT-based automatic pill dispenser integrated with a web dashboard using ESP32 microcontrollers and Google Firebase cloud service.</p>
+        </div>
+    </header>
+
+
     <article class="container">
-        <h1>Web Integrated IOT Based Automatic Pill Dispenser</h1>
+        <h1>Mediciner</h1>
         <p class="justified-text">Patient’s medicine negligence is a serious health problem that could reduce the effectiveness of treatment, especially for elderly patients. This project aims to design a device,
             called “Mediciner”, an automatic IOT-based medicine dispenser that is simple, open source, and
             affordable. This system is built using ESP32 microcontrollers that is integrated to Google’s
